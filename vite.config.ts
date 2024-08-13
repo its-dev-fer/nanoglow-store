@@ -16,7 +16,7 @@ export default defineConfig({
         short_name: 'Nanoglow',
         description: 'Proyecto Nanoglow',
         theme_color: '#ffffff', //Depende del color principal del proyecto
-        background_color: '#ffffff', //Depend del color establecido en el proyecto
+        background_color: '#ffffff', //Depende del color establecido en el proyecto
         // icons: [],
       }
     })
