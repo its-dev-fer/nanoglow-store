@@ -1,61 +1,91 @@
-import ParticleField from 'react-particles-webgl';
+import React, { useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import logo from '../../assets/logo.png';
+import * as THREE from 'three';
+import Particles from 'react-tsparticles';
 
+const Cube = () => {
+  const meshRef = useRef<THREE.LineSegments>(null);
 
-const config = {
-  showCube: false,
-  dimension: '3D',
-  boundaryType: 'bounce',
-  velocity: 2,
-  antialias: true,
-  direction: {
-    xMin: -1,
-    xMax: 1,
-    yMin: -1,
-    yMax: 1,
-    zMin: -1,
-    zMax: 1,
-  },
-  lines: {
-    colorMode: 'solid',
-    color: '#FFFFFF', 
-    transparency: 0.8,
-    limitConnections: true,
-    maxConnections: 20,
-    minDistance: 150,
-    visible: true,
-  },
-  particles: {
-    colorMode: 'solid',
-    color: '#FFFFFF', 
-    transparency: 0.8,
-    shape: 'circle',
-    count: 300,
-    minSize: 10,
-    maxSize: 30,
-    visible: true,
-  },
-  cameraControls: {
-    enabled: true,
-    enableDamping: true,
-    dampingFactor: 0.2,
-    enableZoom: true,
-    autoRotate: true,
-    autoRotateSpeed: 0.3,
-    resetCameraFlag: false,
-  },
+  useFrame((state) => {
+    if (meshRef.current) {
+      const { x, y } = state.mouse;
+      meshRef.current.rotation.y = x * Math.PI;
+      meshRef.current.rotation.x = y * Math.PI;
+    }
+  });
+
+  return (
+    <lineSegments ref={meshRef} rotation={[0, 0, 0]}>
+      <wireframeGeometry
+        attach="geometry"
+        args={[new THREE.BoxGeometry(3.8, 3.8, 3.8, 10, 10, 10)]}
+      />
+      <lineBasicMaterial color="white" />
+    </lineSegments>
+  );
 };
 
 const Hero3D = () => {
   return (
-    <div className="relative h-screen w-full bg-black">
-      <ParticleField config={config} />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-        <img src="/logo.png" alt="Logo" className="mb-5 mx-auto" />
-        <h1 className="text-4xl font-bold mb-5">LA IMPRESIÓN 3D REIMAGINADA</h1>
-        <button className="bg-purple-600 text-white py-3 px-6 rounded-md shadow-md hover:bg-purple-700 transition duration-300">
+    <div className="relative w-full h-screen bg-[#1B1B1B] flex flex-col md:flex-row items-center justify-center p-4">
+      <img
+        src={logo}
+        alt="Nanoglow Designs"
+        className="absolute top-4 left-4 w-16 h-16 md:w-20 md:h-20"
+      />
+      <div className="text-left text-white z-10 mx-auto max-w-xl md:max-w-3xl ml-4 md:ml-20"> {/* Agregado margen izquierdo en móvil */}
+        <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6">
+          LA IMPRESIÓN 3D
+        </h1>
+        <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6">
+          REIMAGINADA
+        </h1>
+        <button className="hidden md:block px-8 py-3 md:px-10 md:py-4 bg-[#5D3D9A] hover:bg-purple-500 text-white text-sm md:text-lg rounded-full transition mt-6">
           Explora nuestros servicios
         </button>
       </div>
+
+      <div className="w-full h-1/3 md:w-1/2 md:h-2/3 relative mx-auto mt-8 md:mt-0">
+        <Canvas className="absolute inset-0">
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+          <Cube />
+        </Canvas>
+      </div>
+
+      <button className="md:hidden px-8 py-3 bg-[#5D3D9A] hover:bg-purple-500 text-white text-sm rounded-full transition mt-12"> {/* Incrementado el margen superior en móvil */}
+        Explora nuestros servicios
+      </button>
+
+      <Particles
+        options={{
+          particles: {
+            number: {
+              value: 50,
+            },
+            size: {
+              value: 3,
+            },
+            move: {
+              speed: 2,
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: '#ffffff',
+            },
+          },
+        }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+        }}
+      />
     </div>
   );
 };
