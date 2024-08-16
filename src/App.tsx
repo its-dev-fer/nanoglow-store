@@ -1,12 +1,8 @@
-import React from 'react';
-import LoginForm from './components/Formulario-login/LoginForm.tsx';
+import React from "react";
+import AppRoutes from "./routes/Approutes";
 
 const App: React.FC = () => {
-  return (
-    <div>
-      <LoginForm />
-    </div>
-  );
+  return <AppRoutes />;
 };
 
 export default App;
