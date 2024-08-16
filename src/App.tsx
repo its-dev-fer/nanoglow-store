@@ -1,12 +1,12 @@
 import React from 'react';
-import RegisterForm from './components/formulario-registro/RegisterForm'
+import AppRoutes from './routes/AppRoutes';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <RegisterForm />
+    <div className="App">
+      <AppRoutes />
     </div>
   );
 };
 
-export default App
+export default App;
