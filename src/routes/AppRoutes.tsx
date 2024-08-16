@@ -7,7 +7,7 @@ const AppRoutes: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/" element={<RegisterForm />} />
       </Routes>
     </Router>
   );
