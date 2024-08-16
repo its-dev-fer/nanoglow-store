@@ -19,7 +19,7 @@ const Cube = () => {
     <lineSegments ref={meshRef} rotation={[0, 0, 0]}>
       <wireframeGeometry
         attach="geometry"
-        args={[new THREE.BoxGeometry(3.8, 3.8, 3.8, 10, 10, 10)]}
+        args={[new THREE.BoxGeometry(3.7, 3.7, 3.7, 1, 1, 1)]}
       />
       <lineBasicMaterial color="white" />
     </lineSegments>
@@ -34,7 +34,7 @@ const Hero3D = () => {
         alt="Nanoglow Designs"
         className="absolute top-4 left-4 w-16 h-16 md:w-20 md:h-20"
       />
-      <div className="text-left text-white z-10 mx-auto max-w-xl md:max-w-3xl ml-4 md:ml-20"> {/* Agregado margen izquierdo en móvil */}
+      <div className="text-left text-white z-10 mx-auto max-w-xl md:max-w-3xl ml-4 md:ml-20"> 
         <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6">
           LA IMPRESIÓN 3D
         </h1>
@@ -54,7 +54,7 @@ const Hero3D = () => {
         </Canvas>
       </div>
 
-      <button className="md:hidden px-8 py-3 bg-[#5D3D9A] hover:bg-purple-500 text-white text-sm rounded-full transition mt-12"> {/* Incrementado el margen superior en móvil */}
+      <button className="md:hidden px-8 py-3 bg-[#5D3D9A] hover:bg-purple-500 text-white text-sm rounded-full transition mt-12"> 
         Explora nuestros servicios
       </button>
 

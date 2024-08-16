@@ -1,4 +1,3 @@
-import './App.css'
 import Hero3D from './components/hero3D/Hero3D'
 
 function App() {
