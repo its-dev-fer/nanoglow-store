@@ -1,11 +1,13 @@
-import React from 'react';
-import AppRoutes from './routes/AppRoutes';
+import React from "react";
+import AppRoutes from "./routes/AppRoutes";
+import Hero3D from "./components/hero3D/Hero3D";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <>
+      <Hero3D></Hero3D>
       <AppRoutes />
-    </div>
+    </>
   );
 };
 
