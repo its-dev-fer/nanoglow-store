@@ -1,7 +1,7 @@
 {
   "name": "nanoglow",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.1"
+    "react-router-dom": "^6.26.1",
+    "react-tsparticles": "^2.12.2",
+    "three": "^0.167.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
