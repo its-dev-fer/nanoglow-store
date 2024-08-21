@@ -22,7 +22,7 @@ title: 'MODELOS 3D',
 
 const Sections: React.FC = () => {
   return (
-    <div className="flex flex-col gap-8 p-4">
+    <div className="flex flex-col">
       {sectionsData.map((section, index) => (
         <SectionCard
           key={index}
