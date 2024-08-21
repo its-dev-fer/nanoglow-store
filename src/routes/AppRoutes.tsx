@@ -13,7 +13,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/" element={<Hero3D />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/update" element={<UpdateForm />} />
+        <Route path="/profile" element={<UpdateForm />} />
       </Routes>
     </Router>
   );
