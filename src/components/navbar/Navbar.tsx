@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo.png';
-import lupaIcon from '../../assets/Lupa.png';
-import xIcon from '../../assets/X.png';
+import lupaIcon from '../../assets/Lupa.svg';
+import xIcon from '../../assets/X.svg';
+import bolsaIcon from '../../assets/bolsa.svg';
+import userIcon from '../../assets/user.svg'; 
 
 const Navbar: React.FC = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -49,21 +51,29 @@ const Navbar: React.FC = () => {
           </div>
         )}
 
-        <div onClick={toggleSearch} className="cursor-pointer">
+        <div className="flex items-center space-x-4">
+          <div onClick={toggleSearch} className="cursor-pointer">
+            <img
+              src={isSearchVisible ? xIcon : lupaIcon}
+              alt={isSearchVisible ? "Cerrar" : "Buscar"}
+              className={isSearchVisible ? "w-4 h-4 md:w-6 md:h-6" : "w-6 h-6 md:w-8 md:h-8"}
+            />
+          </div>
           <img
-            src={isSearchVisible ? xIcon : lupaIcon}
-            alt={isSearchVisible ? "Cerrar" : "Buscar"}
-            className={isSearchVisible ? "w-4 h-4 md:w-5 md:h-5" : "w-6 h-6 md:w-8 md:h-8"}
+            src={bolsaIcon}
+            alt="Bolsa de compras"
+            className="w-6 h-6 md:w-8 md:h-8"
           />
-        </div>
-
-        <div className="flex space-x-4">
-          <Link to="/login" className="text-black-300 hover:text-white">
-            Inicio Sesión
-          </Link>
-          <Link to="/register" className="text-black-300 hover:text-white">
-            Registro
-          </Link>
+          <div className="flex flex-col items-center">
+            <img
+              src={userIcon} 
+              alt="User Icon"
+              className="w-6 h-6 md:w-8 md:h-8 mb-1" 
+            />
+            <Link to="/login" className="text-black-300 hover:text-white">
+              Inicio Sesión
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
