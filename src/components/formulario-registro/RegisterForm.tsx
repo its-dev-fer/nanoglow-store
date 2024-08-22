@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const RegisterForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -86,12 +87,9 @@ const RegisterForm: React.FC = () => {
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               ¿Ya tienes cuenta?{" "}
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                Inicia sesión
-              </a>
+              <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+              Inicia Sesion
+            </Link>
             </p>
           </div>
           <form className="mt-4 space-y-4" onSubmit={handleSubmit} method="POST">
