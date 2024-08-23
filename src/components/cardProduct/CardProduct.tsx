@@ -5,7 +5,7 @@ import { FaCreditCard } from '@react-icons/all-files/fa/FaCreditCard';
 interface CardProductProps {
   image: string;
   name: string;
-  Price: number;
+  price: number;
 }
 
 /*
@@ -13,12 +13,12 @@ interface CardProductProps {
     <CardProduct
       image={product.image}
       name={product.name}                     "inge agregar esto a section para simular como se veria la card
-      currentPrice={product.Price}       ya que todavia no tenemos la conexion"
+      price={product.Price}       ya que todavia no tenemos la conexion"
     />
   ))}
     */
    
-const CardProduct: React.FC<CardProductProps> = ({ image, name, Price }) => {
+const CardProduct: React.FC<CardProductProps> = ({ image, name, price }) => {
 
     /* Aca dejare un poco la estructura para llamar al front, no recuerdo si estan usando axios
     const [product, setProduct] = useState<Product | null>(null);
@@ -61,7 +61,7 @@ const CardProduct: React.FC<CardProductProps> = ({ image, name, Price }) => {
               <span className="text-black text-base"> ★ 5.0</span>
               <span className="ml-1 text-gray-600 text-base">(0 reseñas)</span>
             </div>
-            <span className="text-lg font-bold ml-2">${Price.toFixed(2)} MXN</span>
+            <span className="text-lg font-bold ml-2">${price.toFixed(2)} MXN</span>
           </div>
           <div className="flex justify-between space-x-2">
             <button className="w-44 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium py-2 px-4 rounded flex items-center justify-center">
