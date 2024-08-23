@@ -13,7 +13,11 @@ interface CardProductProps {
     <CardProduct
       image={product.image}
       name={product.name}                     "inge agregar esto a section para simular como se veria la card
+<<<<<<< HEAD
       price={product.Price}       ya que todavia no tenemos la conexion"
+=======
+      currentPrice={product.Price}       ya que todavia no tenemos la conexion"
+>>>>>>> c8c49def3699549ae33097e9fae5f24559df864a
     />
   ))}
     */
