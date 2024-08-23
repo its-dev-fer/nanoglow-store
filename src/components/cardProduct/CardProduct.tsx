@@ -12,8 +12,8 @@ interface CardProductProps {
 {products.map((product) => (
     <CardProduct
       image={product.image}
-      name={product.name}                     "inge agregar esto a section para simular como se veria la card
-      price={product.Price}       ya que todavia no tenemos la conexion"
+      name={product.name}                   
+      price={product.price}       
     />
   ))}
     */
